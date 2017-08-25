@@ -26,7 +26,7 @@ class Movie {
     }
     
     
-    init?(dirMovie: [String: Any]){
+    init(dirMovie: [String: Any]){
         
         self.name = dirMovie["title"] as? String
         self.year = dirMovie["release_date"] as? String
