@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         RequestMoviesFacade.RequestTopMovies { movies in
-//            print(movies[0].name!)
             self.movies = movies
         }
         // Do any additional setup after loading the view, typically from a nib.
