@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="395" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="395" height="116.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="395" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Bo-MG-EXf">
@@ -26,48 +26,46 @@
                             <constraint firstAttribute="width" secondItem="3Bo-MG-EXf" secondAttribute="height" multiplier="1:1" id="IUG-rK-EUg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-4e-XuT">
-                        <rect key="frame" x="116" y="8" width="209" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="209" id="5dP-wz-HQ6"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-4e-XuT">
+                        <rect key="frame" x="116" y="8" width="271" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XL-Sy-OnG">
-                        <rect key="frame" x="116" y="37" width="271" height="71"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Popularity " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PV9-SI-zTI">
+                        <rect key="frame" x="116" y="87" width="271" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbg-oe-aNS">
-                        <rect key="frame" x="333" y="8" width="54" height="21"/>
+                        <rect key="frame" x="116" y="58" width="271" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wbg-oe-aNS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="2fu-iI-N7e"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="3Bo-MG-EXf" secondAttribute="bottom" id="6Ow-Sh-yrq"/>
-                    <constraint firstItem="0XL-Sy-OnG" firstAttribute="leading" secondItem="3Bo-MG-EXf" secondAttribute="trailing" constant="8" id="756-CA-Ncp"/>
-                    <constraint firstItem="3Bo-MG-EXf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CPT-R7-8hq"/>
-                    <constraint firstItem="BMk-4e-XuT" firstAttribute="leading" secondItem="0XL-Sy-OnG" secondAttribute="leading" id="Hhf-sE-0IB"/>
-                    <constraint firstItem="wbg-oe-aNS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="KaU-DI-MvZ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="0XL-Sy-OnG" secondAttribute="bottom" constant="0.5" id="Muf-Y5-iyR"/>
-                    <constraint firstItem="BMk-4e-XuT" firstAttribute="baseline" secondItem="wbg-oe-aNS" secondAttribute="baseline" id="Vs4-Rf-4aU"/>
-                    <constraint firstItem="3Bo-MG-EXf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="XaX-5V-Gfb"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="0XL-Sy-OnG" secondAttribute="trailing" id="e8u-Yf-eNP"/>
-                    <constraint firstItem="wbg-oe-aNS" firstAttribute="leading" secondItem="BMk-4e-XuT" secondAttribute="trailing" constant="8" symbolic="YES" id="f1j-wR-3qL"/>
-                    <constraint firstItem="0XL-Sy-OnG" firstAttribute="top" secondItem="wbg-oe-aNS" secondAttribute="bottom" constant="8" id="ugW-fl-ADT"/>
+                    <constraint firstItem="PV9-SI-zTI" firstAttribute="bottom" secondItem="3Bo-MG-EXf" secondAttribute="bottom" id="2YN-P4-z95"/>
+                    <constraint firstItem="PV9-SI-zTI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="DCF-La-OdZ"/>
+                    <constraint firstItem="BMk-4e-XuT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="IhX-rt-RUg"/>
+                    <constraint firstItem="PV9-SI-zTI" firstAttribute="top" secondItem="wbg-oe-aNS" secondAttribute="bottom" constant="8" symbolic="YES" id="OcL-2K-7C5"/>
+                    <constraint firstItem="3Bo-MG-EXf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Zu4-S9-NPW"/>
+                    <constraint firstItem="BMk-4e-XuT" firstAttribute="leading" secondItem="3Bo-MG-EXf" secondAttribute="trailing" constant="8" id="emj-x1-WqZ"/>
+                    <constraint firstItem="wbg-oe-aNS" firstAttribute="leading" secondItem="3Bo-MG-EXf" secondAttribute="trailing" constant="8" id="gKg-7Q-QZ2"/>
+                    <constraint firstItem="wbg-oe-aNS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="kf9-Ut-bj3"/>
+                    <constraint firstItem="BMk-4e-XuT" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="lkk-ly-Qnx"/>
+                    <constraint firstItem="3Bo-MG-EXf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="uNb-Wj-NNs"/>
+                    <constraint firstItem="3Bo-MG-EXf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ygr-JL-Jyo"/>
+                    <constraint firstItem="wbg-oe-aNS" firstAttribute="top" secondItem="BMk-4e-XuT" secondAttribute="bottom" constant="8" id="zhE-w3-Ynx"/>
+                    <constraint firstItem="PV9-SI-zTI" firstAttribute="leading" secondItem="wbg-oe-aNS" secondAttribute="leading" id="zqh-Qz-CWU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="movieDateLabel" destination="wbg-oe-aNS" id="c7V-s8-eGd"/>
-                <outlet property="movieOverviewLabel" destination="0XL-Sy-OnG" id="T1j-P1-w72"/>
-                <outlet property="moviePosterImageView" destination="3Bo-MG-EXf" id="aI7-8g-nn1"/>
-                <outlet property="movieTitleLabel" destination="BMk-4e-XuT" id="e5B-j5-Uhl"/>
+                <outlet property="movieDateLabel" destination="wbg-oe-aNS" id="KpD-Q8-zrE"/>
+                <outlet property="moviePopularityLabel" destination="PV9-SI-zTI" id="aCd-yh-GJS"/>
+                <outlet property="moviePosterImageView" destination="3Bo-MG-EXf" id="9GI-xS-doH"/>
+                <outlet property="movieTitleLabel" destination="BMk-4e-XuT" id="IQF-4B-iI8"/>
             </connections>
             <point key="canvasLocation" x="-6.5" y="-224.5"/>
         </tableViewCell>

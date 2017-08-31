@@ -15,24 +15,18 @@ class Movie: NSObject {
     
     var name: String?
     var year: String?
+    var popularity: Float?
     var overview: String?
     var posterPath: String?
-    var poster: UIImage?
+    var posterURL: URL?
     
     //MARK: Initializator
-    
-    
-    init(name: String, year: String, overview: String){
-        self.name = name
-        self.year = year
-        self.overview = overview
-    }
-    
     
     init(dirMovie: [String: Any]){
         
         self.name = dirMovie["title"] as? String
         self.year = dirMovie["release_date"] as? String
+        self.popularity = dirMovie["popularity"] as? Float
         self.overview = dirMovie["overview"] as? String
         self.posterPath = dirMovie["poster_path"] as? String
     }
