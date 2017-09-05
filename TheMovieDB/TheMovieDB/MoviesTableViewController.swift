@@ -56,14 +56,14 @@ class MoviesTableViewController: UITableViewController {
         
         cell.movieTitleLabel.attributedText = NSAttributedString(string: movie.name!, attributes: [NSFontAttributeName : UIFont.boldSystemFont(ofSize: 18)])
         
-        let dateLabelTitle = NSMutableAttributedString(string: "Release Date: ",attributes: boldAttribute)
-        dateLabelTitle.append(NSAttributedString(string: (movie.year)!))
-        cell.movieDateLabel.attributedText = dateLabelTitle
-      
-        let popularityLabelTitle = NSMutableAttributedString(string: "Popularity: ",attributes: boldAttribute)
-        let popularityString = String((movie.popularity)!)
-        popularityLabelTitle.append(NSAttributedString(string:popularityString))
-        cell.moviePopularityLabel.attributedText = popularityLabelTitle
+//        let dateLabelTitle = NSMutableAttributedString(string: "Release Date: ",attributes: boldAttribute)
+//        dateLabelTitle.append(NSAttributedString(string: (movie.year)!))
+//        cell.movieDateLabel.attributedText = dateLabelTitle
+//      
+//        let popularityLabelTitle = NSMutableAttributedString(string: "Popularity: ",attributes: boldAttribute)
+//        let popularityString = String((movie.popularity)!)
+//        popularityLabelTitle.append(NSAttributedString(string:popularityString))
+//        cell.moviePopularityLabel.attributedText = popularityLabelTitle
         
         cell.moviePosterImageView.af_setImage(withURL: (movie.posterURL)!)
 

@@ -62,8 +62,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="movieDateLabel" destination="wbg-oe-aNS" id="KpD-Q8-zrE"/>
-                <outlet property="moviePopularityLabel" destination="PV9-SI-zTI" id="aCd-yh-GJS"/>
                 <outlet property="moviePosterImageView" destination="3Bo-MG-EXf" id="9GI-xS-doH"/>
                 <outlet property="movieTitleLabel" destination="BMk-4e-XuT" id="IQF-4B-iI8"/>
             </connections>
