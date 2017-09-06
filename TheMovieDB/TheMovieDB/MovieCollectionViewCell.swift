@@ -12,5 +12,6 @@ class MovieCollectionViewCell: UICollectionViewCell, MovieDataCellProtocol {
     
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
-    
+    @IBOutlet weak var movieDateLabel: UILabel!
+    @IBOutlet weak var moviePopularityLabel: UILabel!
 }

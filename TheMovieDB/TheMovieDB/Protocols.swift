@@ -17,12 +17,16 @@ protocol MovieDataSourceProtocol {
     
     func configure(cell:MovieDataCellProtocol, atIndex:IndexPath) -> Void
     
+    func didSelectRow(atIndex: IndexPath)
+    
 }
 
-protocol MovieDataCellProtocol: class {
+protocol MovieDataCellProtocol {
     
     var movieTitleLabel: UILabel! {get set}
     var moviePosterImageView: UIImageView! {get set}
+    var movieDateLabel: UILabel! {get set}
+    var moviePopularityLabel: UILabel! {get set}
     
 }
 

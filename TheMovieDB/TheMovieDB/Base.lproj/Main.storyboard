@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HgA-3k-8c0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LVY-Rx-QLC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,41 +11,6 @@
     </dependencies>
     <scenes>
         <!--Popular Movies-->
-        <scene sceneID="a0m-LR-BCi">
-            <objects>
-                <tableViewController id="MTS-HU-8bH" customClass="MoviesTableViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="TMr-s2-dk5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="100" id="HYq-Id-96l" customClass="MovieTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HYq-Id-96l" id="BQ6-lZ-lOa">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="o9v-Kc-lXQ" kind="show" identifier="ShowMovie" id="tQO-I4-Vig"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="MTS-HU-8bH" id="L5X-fL-3GJ"/>
-                            <outlet property="delegate" destination="MTS-HU-8bH" id="kW0-9B-WIZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Popular Movies" id="Y85-ZG-wZa"/>
-                    <connections>
-                        <outlet property="tableView" destination="TMr-s2-dk5" id="3nU-mn-cgr"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Stf-kz-geO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2532" y="103.89805097451276"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="6i6-6I-lF6">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="HgA-3k-8c0" customClass="ViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,10 +23,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Popular Movies" id="VLX-Ev-WhM"/>
+                    <connections>
+                        <segue destination="o9v-Kc-lXQ" kind="show" identifier="ShowMovie" id="Oaj-tN-sv2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaa-ya-Ffl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="814"/>
+            <point key="canvasLocation" x="3388" y="103.89805097451276"/>
         </scene>
         <!--Movie Detail-->
         <scene sceneID="dxa-eO-0Vb">
@@ -82,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ra5-s8-qnb">
-                                <rect key="frame" x="192" y="115" width="167" height="112"/>
+                                <rect key="frame" x="192" y="114.5" width="167" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7z-nC-VzA">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="20.5"/>
@@ -114,7 +83,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7p-X9-XF7">
-                                <rect key="frame" x="16" y="406" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="375.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -137,8 +106,8 @@
                             <constraint firstItem="uDl-Ee-4hD" firstAttribute="leading" secondItem="xKq-7X-AFa" secondAttribute="leadingMargin" id="PvE-az-K6n"/>
                             <constraint firstItem="INa-K8-fV7" firstAttribute="top" secondItem="uDl-Ee-4hD" secondAttribute="bottom" constant="12" id="WeS-Mb-nrJ"/>
                             <constraint firstItem="ra5-s8-qnb" firstAttribute="leading" secondItem="INa-K8-fV7" secondAttribute="trailing" constant="8" symbolic="YES" id="hEB-7z-Ysq"/>
+                            <constraint firstItem="I7p-X9-XF7" firstAttribute="top" secondItem="INa-K8-fV7" secondAttribute="bottom" constant="12" id="mZE-dr-bLy"/>
                             <constraint firstItem="uDl-Ee-4hD" firstAttribute="top" secondItem="jgI-z4-fxi" secondAttribute="bottom" constant="12" id="swx-Oz-L7J"/>
-                            <constraint firstItem="I7p-X9-XF7" firstAttribute="top" secondItem="INa-K8-fV7" secondAttribute="bottom" constant="42" id="tlS-8v-swQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Detail" id="EnA-3B-T2X"/>
@@ -154,25 +123,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Twy-WP-FDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3349.5999999999999" y="103.89805097451276"/>
+            <point key="canvasLocation" x="4288.8000000000002" y="103.89805097451276"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="DiL-6b-pEs">
+        <scene sceneID="IuG-wC-mAE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uk4-pK-8We" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVY-Rx-QLC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nBh-Dn-Dn7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h0T-vz-fNa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MTS-HU-8bH" kind="relationship" relationship="rootViewController" id="Ysh-m0-ElQ"/>
+                        <segue destination="HgA-3k-8c0" kind="relationship" relationship="rootViewController" id="z6I-iD-LSZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uXt-rY-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9q-X7-IMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1592.8" y="103.89805097451276"/>
+            <point key="canvasLocation" x="2448.8000000000002" y="103.89805097451276"/>
         </scene>
     </scenes>
 </document>

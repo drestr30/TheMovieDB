@@ -13,6 +13,7 @@ class MovieTableView: UITableView, MovieDataListViewProtocol {
     var movieDataSource: MovieDataSourceProtocol?
     
     func configure(){
+        delegate = self
         dataSource = self
         let nib = UINib(nibName:"MovieTableViewCell", bundle: nil)
         register(nib, forCellReuseIdentifier: "MovieCell")
@@ -35,7 +36,7 @@ class MovieTableView: UITableView, MovieDataListViewProtocol {
     }
 }
 
-extension MovieTableView: UITableViewDataSource {
+extension MovieTableView: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return movieDataSource?.numberOfSections() ?? 1
@@ -48,7 +49,18 @@ extension MovieTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         movieDataSource?.configure(cell: cell, atIndex: indexPath)
+        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        movieDataSource?.didSelectRow(atIndex: indexPath)
+    }
+    
+    
     
 }

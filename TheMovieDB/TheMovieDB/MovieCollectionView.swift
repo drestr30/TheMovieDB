@@ -14,6 +14,7 @@ class MovieCollectionView: UICollectionView, MovieDataListViewProtocol {
     
     func configure(){
         dataSource = self
+        delegate = self
         let nib = UINib(nibName:"MovieCollectionViewCell", bundle: nil)
         register(nib, forCellWithReuseIdentifier: "Cell")
     }
@@ -30,14 +31,38 @@ class MovieCollectionView: UICollectionView, MovieDataListViewProtocol {
     }
     
     init() {
-        let defaultLayout = UICollectionViewFlowLayout()
-        super.init(frame: CGRect.zero, collectionViewLayout: defaultLayout)
+        
+        let flowLayout = UICollectionViewFlowLayout()
+        
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumInteritemSpacing =  CGFloat(1.0)
+        flowLayout.minimumLineSpacing =  CGFloat(2.0)
+        
+        let windowWidth = CGFloat(UIScreen.main.bounds.width)
+        let windowHeight = CGFloat(UIScreen.main.bounds.height)
+        let navigationControlerHeight = CGFloat(44.0)
+        
+        flowLayout.itemSize = CGSize(width: ((windowWidth)/2), height: ((windowHeight - navigationControlerHeight)/2-11))
+
+        super.init(frame: CGRect.zero, collectionViewLayout: flowLayout)
         configure()
     }
     
+    static func configureLayout(){
+        let flowLayout = UICollectionViewFlowLayout()
+
+        flowLayout.minimumInteritemSpacing =  CGFloat(1.0)
+        flowLayout.minimumLineSpacing =  CGFloat(2.0)
+        
+        let windowWidth = CGFloat(UIScreen.main.bounds.width)
+        let windowHeight = CGFloat(UIScreen.main.bounds.height)
+        let navigationControlerHeight = CGFloat(44.0)
+        
+        flowLayout.itemSize = CGSize(width: ((windowWidth)/2), height: ((windowHeight - navigationControlerHeight)/2-11))
+    }
 }
 
-extension MovieCollectionView: UICollectionViewDataSource{
+extension MovieCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return movieDataSource?.numberOfSections() ?? 1
@@ -52,4 +77,9 @@ extension MovieCollectionView: UICollectionViewDataSource{
         movieDataSource?.configure(cell: cell as! MovieDataCellProtocol, atIndex: indexPath)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieDataSource?.didSelectRow(atIndex: indexPath)
+    }
+    
 }
