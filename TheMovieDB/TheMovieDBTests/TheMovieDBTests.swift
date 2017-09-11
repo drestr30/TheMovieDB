@@ -7,6 +7,9 @@
 //
 
 import XCTest
+import Alamofire
+import OHHTTPStubs
+
 @testable import TheMovieDB
 
 class TheMovieDBTests: XCTestCase {
@@ -21,16 +24,37 @@ class TheMovieDBTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFacadeResponseOfCorrectType(){
+        
+        
+        let expect = expectation(description: "GET movie")
+        RequestMoviesFacade.RequestTopMovies{ response in
+            
+            if (response as? [Movie]) != nil {
+                XCTAssertTrue(true)
+            } else {
+                XCTAssertTrue(false)
+            }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10 ){ error in
+            print (error ?? "0")
         }
     }
     
+    func testFacadeCorrectResponse(){
+        
+        class mockRequesTopMovies: RequestMoviesFacade{
+            
+            func RequestTopMovies(){
+            return
+            }
+        
+        }
+    }
+    
+    
 }
+

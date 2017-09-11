@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var movieListView: MovieDataListViewProtocol =  MovieCollectionView()
+    var movieListView: MovieDataListViewProtocol =  MovieTableView()
     var movies:[Movie] = []
     var selectedMovie: Movie?
+    let moviesFacade = RequestMoviesFacade()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +26,9 @@ class ViewController: UIViewController {
         
         movieListView.movieDataSource = self
         
-        RequestMoviesFacade.RequestTopMovies { movies in
+        moviesFacade.RequestTopMovies { movies in
             self.movies = movies
+            print(movies[1].name!, movies[2].name!)
             self.movieListView.reloadData()
         }
     }
@@ -72,9 +74,7 @@ extension ViewController: MovieDataSourceProtocol {
         cell.moviePosterImageView.af_setImage(withURL: (movie.posterURL)!)
     }
     
-  
-    
-    func didSelectRow(atIndex: IndexPath) {
+    func didSelectItem(atIndex: IndexPath) {
         selectedMovie = movies[atIndex.row]
         performSegue(withIdentifier: "ShowMovie",  sender: selectedMovie)
     }

@@ -17,9 +17,15 @@ protocol MovieDataSourceProtocol {
     
     func configure(cell:MovieDataCellProtocol, atIndex:IndexPath) -> Void
     
-    func didSelectRow(atIndex: IndexPath)
+    func didSelectItem(atIndex: IndexPath)
     
 }
+
+//protocol MovieDelegateProtocol {
+//    
+//    func didSelectItem(atIndex: IndexPath)
+//    
+//}
 
 protocol MovieDataCellProtocol {
     
@@ -34,5 +40,6 @@ protocol MovieDataListViewProtocol: class {
     
     func reloadData()
     var movieDataSource: MovieDataSourceProtocol? {get set}
+//    var movieDelegate: MovieDelegateProtocol? {get set}
 }
 

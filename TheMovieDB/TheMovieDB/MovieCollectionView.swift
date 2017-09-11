@@ -79,7 +79,7 @@ extension MovieCollectionView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        movieDataSource?.didSelectRow(atIndex: indexPath)
+        movieDataSource?.didSelectItem(atIndex: indexPath)
     }
     
 }

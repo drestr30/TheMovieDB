@@ -14,7 +14,7 @@ import AlamofireImage
 class RequestMoviesFacade{
     
     
-    static func RequestApiConfiguration (completion: @escaping ([String:Any]) -> Void ){
+     func RequestApiConfiguration (completion: @escaping ([String:Any]) -> Void ){
         
         let ApiUrl = "https://api.themoviedb.org/3/configuration?api_key=1f4d7de5836b788bdfd897c3e0d0a24b"
         
@@ -26,7 +26,7 @@ class RequestMoviesFacade{
     }
     
     
-    static func RequestTopMovies(completion: @escaping ([Movie]) -> Void ){
+     func RequestTopMovies(completion: @escaping ([Movie]) -> Void ){
         
         let topMoviesURL = "https://api.themoviedb.org/3/movie/top_rated?api_key=1f4d7de5836b788bdfd897c3e0d0a24b&language=en-US&page=1"
         
@@ -37,7 +37,7 @@ class RequestMoviesFacade{
             
             var movies = [Movie]()
             
-            RequestMovieGenres(){ genresList in
+            self.RequestMovieGenres(){ genresList in
                 
                 for dirMovie in dirMovies!{
                     let movie = Movie(dirMovie: dirMovie)
@@ -60,7 +60,7 @@ class RequestMoviesFacade{
         }
     }
     
-    static func RequestMovieGenres(completion: @escaping ([[String:Any]]?) -> Void) {
+     func RequestMovieGenres(completion: @escaping ([[String:Any]]?) -> Void) {
         
         let genresDicURL = "https://api.themoviedb.org/3/genre/movie/list?api_key=1f4d7de5836b788bdfd897c3e0d0a24b&language=en-US"
         

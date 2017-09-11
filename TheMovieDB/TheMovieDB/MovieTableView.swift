@@ -11,6 +11,7 @@ import UIKit
 class MovieTableView: UITableView, MovieDataListViewProtocol {
     
     var movieDataSource: MovieDataSourceProtocol?
+//    var movieDelegate: MovieDelegateProtocol?
     
     func configure(){
         delegate = self
@@ -57,10 +58,12 @@ extension MovieTableView: UITableViewDataSource, UITableViewDelegate {
         return 100
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        movieDataSource?.didSelectRow(atIndex: indexPath)
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        movieDataSource?.didSelectItem(atIndex: indexPath)
     }
     
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        movieDelegate?.didSelectItem(atIndex: indexPath)
+//    }
     
 }
