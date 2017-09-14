@@ -21,12 +21,6 @@ protocol MovieDataSourceProtocol {
     
 }
 
-//protocol MovieDelegateProtocol {
-//    
-//    func didSelectItem(atIndex: IndexPath)
-//    
-//}
-
 protocol MovieDataCellProtocol {
     
     var movieTitleLabel: UILabel! {get set}
@@ -40,6 +34,6 @@ protocol MovieDataListViewProtocol: class {
     
     func reloadData()
     var movieDataSource: MovieDataSourceProtocol? {get set}
-//    var movieDelegate: MovieDelegateProtocol? {get set}
+
 }
 

@@ -21,7 +21,6 @@ class Movie: NSObject {
     var genres = [String]()
     var overview: String?
     var posterPath: String?
-    var posterURL: URL?
     
     //MARK: Initializator
     

@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     var movieListView: MovieDataListViewProtocol =  MovieTableView()
     var movies:[Movie] = []
-    var selectedMovie: Movie?
+    var selectedMovie: Movie!
+    var genreList: [[String:Any]] = []
     let moviesFacade = RequestMoviesFacade()
     
     override func viewDidLoad() {
@@ -28,7 +29,6 @@ class ViewController: UIViewController {
         
         moviesFacade.RequestTopMovies { movies in
             self.movies = movies
-            print(movies[1].name!, movies[2].name!)
             self.movieListView.reloadData()
         }
     }
@@ -71,14 +71,14 @@ extension ViewController: MovieDataSourceProtocol {
         popularityLabelTitle.append(NSAttributedString(string:popularityString))
         cell.moviePopularityLabel.attributedText = popularityLabelTitle
         
-        cell.moviePosterImageView.af_setImage(withURL: (movie.posterURL)!)
+        let movieURL = NSURL(string:TheMovieDBService.imgBaseURL + movie.posterPath!)
+        cell.moviePosterImageView.af_setImage(withURL: movieURL as! URL)
     }
     
     func didSelectItem(atIndex: IndexPath) {
         selectedMovie = movies[atIndex.row]
-        performSegue(withIdentifier: "ShowMovie",  sender: selectedMovie)
+        performSegue(withIdentifier: "ShowMovie", sender: selectedMovie)
     }
-    
 }
 
 extension UIView {
